@@ -1,0 +1,14 @@
+<h1>My products</h1>
+<div class='products-container'>
+  @if(productsListResource.isLoading()){
+    <p>loading products information...</p>
+  }@else if(productsListResource.error()){
+    <p>Something went Wrong...</p>
+  }@else{
+    @let productsList = productsListResource.value();
+    @for(producto of productsList?.productos; track producto){
+      <product-card [productInfo]="producto"/>
+    }
+  }
+</div>
+
