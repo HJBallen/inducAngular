@@ -1,1 +1,16 @@
-<form [formGroup]="applyForm"></form>
+<div>
+  <h2>Registro de Productos</h2>
+    <form [formGroup]="registerForm" (submit) = "submitProducto()">
+    <label for="nombre">Nombre del Producto</label>
+    <input type="text" formControlName = "nombre">
+
+    <label for="imagen">Imagen del Producto</label>
+    <input type="file" formControlName = "imagen">
+
+    <label for="categoria">Categoria</label>
+    <input type="text" formControlName = "categoria">
+
+    <button type="submit"> Enviar ✈</button>
+  </form>
+</div>
+
