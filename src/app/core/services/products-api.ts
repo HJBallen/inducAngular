@@ -11,4 +11,14 @@ export class ProductsApi {
   getProductsList():HttpResourceRef<ApiResponse | undefined >{
     return httpResource<ApiResponse>(()=>this.baseApiUrl);
   }
+
+  postProduct(){
+    httpResource(()=>({
+      url: `${this.baseApiUrl}/create`,
+      method: 'POST',
+      headers: {
+        "Content-Type":"application/json",
+      }
+    }))
+  }
 }
